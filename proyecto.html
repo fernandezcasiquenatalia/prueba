@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/confetti.css">
+  <style>
+    #header {
+      background-color: #eebf25;
+      border-radius: 10px;
+      padding: 5px;
+    }
+
+    .nav {
+      padding-right: 20px;
+    }
+
+    .nav ul li{
+      display:inline;
+      padding:0 10px
+    }
+
+    h1 {
+      text-align: center;
+      color: black;
+      margin: 8px;
+    }
+    #seccion {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap
+    }
+
+    .barra {
+      padding: 10px;
+      margin:5px;
+      background: #433d4e;
+      flex:3;
+      border-radius:10px;
+      display:flex;
+      flex-flow:column;
+      align-items:center;
+    }
+
+    .contenido {
+      padding: 10px;
+      border-radius:10px;
+      background: rgb(230, 226, 171);
+      margin:5px;
+      flex:1 150px;
+    }
+
+    .subcontenido2 {
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    #resultado {
+      display:flex;
+      flex-direction:column;
+      flex-wrap:wrap;
+      align-items: center;
+    }
+    #boton-reiniciar {
+      background-color: #a82b2b;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    #footer {
+      background-color: rgb(240, 240, 240);
+      height: 100%;
+      text-align: center;
+      padding-top: 10px;
+      border-radius: 10px;
+      display:flex;
+      flex-flow:row;
+    }
+    .pie {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #galeria{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap; 
+      height:100px;
+    }
+
+    .proyecto{
+      
+      height:150px;
+      max-width:150px;
+      background-color:rgb(230, 186, 186);
+      border-radius:10px;
+      margin:10px;
+      flex:1 100px;
+    }
+
+    .barra a {
+      display:block;
+    }
+    #imagen-interactiva {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      background-image: url('img/bateria.png');
+      background-size: cover;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+
+    #hotspot1 {
+  position: absolute;
+  top: 186px;
+  left: 108px;
+  width: 40px;
+  height: 20px;
+  background-color: #0015ff80;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#hotspot2 {
+  position: absolute;
+  top: 279px;
+  left: 159px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 21, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#hotspot3 {
+  position: absolute;
+  top: 60px;
+  left: 190px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 21, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#hotspot4 {
+  position: absolute;
+  top: 263px;
+  left: 311px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 21, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#hotspot5 {
+  position: absolute;
+  top: 126px;
+  left: 373px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 21, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#hotspot6 {
+  position: absolute;
+  top: 327px;
+  left: 270px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 21, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#hotspot7 {
+  position: absolute;
+  top: 390px;
+  left: 390px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 21, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#hotspot8 {
+  position: absolute;
+  top: 158px;
+  left: 362px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 21, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+ #hotspot9 {
+  position: absolute;
+  top: 218px;
+  left: 393px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 21, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+  #hotspot10 {
+  position: absolute;
+  top: 380px;
+  left: 163px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 21, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+    .text-hotspot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+    }
+
+    #instrucciones {
+      flex:1;
+      cursor: pointer;
+    }
+
+    #prueba {
+      flex:1;
+      cursor:pointer;
+    }
+
+    .texto-rojo{
+            font-size:40px;
+            font-weight: bold;
+            color:red;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="nav" style="text-align:center;">
+      <h3>Bienvenido a "Conociendo De La Bateria"</h3>
+    </div>
+  </div>
+  <div id="seccion">
+    <div class="barra">
+        <div id="imagen-interactiva">
+          <div id="hotspot1"><span class="text-hotspot">1</span></div>
+          <div id="hotspot2"><span class="text-hotspot">2</span></div>
+          <div id="hotspot3"><span class="text-hotspot">3</span></div>
+          <div id="hotspot4"><span class="text-hotspot">4</span></div>
+          <div id="hotspot5"><span class="text-hotspot">5</span></div>
+          <div id="hotspot6"><span class="text-hotspot">6</span></div>
+          <div id="hotspot7"><span class="text-hotspot">7</span></div>
+          <div id="hotspot8"><span class="text-hotspot">8</span></div>
+          <div id="hotspot9"><span class="text-hotspot">9</span></div>
+          <div id="hotspot10"><span class="text-hotspot">10</span></div>
+        </div>
+    </div>
+    <div class="contenido">
+      <div class="subcontenido1">
+        <h2 id="titulo-info">Instrucciones</h2>
+        <p id="texto-info">Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.</p>
+      </div>
+      <div class="subcontenido2">
+        <div class="proyecto">
+          <img id="imagen-info" src="img/hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
+        </div>
+      </div>
+      <div id="resultado" class="invisible">
+    <h2>Tu resultado:</h2>
+    <span id="calif" class="texto-rojo">0/0</span>
+    <img id="imagen-resultado" width="200px" src="img/ping.gif" style="display: none;" />
+    <img id="sad-gif" width="200px" src="img/sad.gif" style="display: none;" />
+    <button id="boton-reiniciar">Reiniciar</button>
+</div>
+    </div>
+  </div>
+  <div id="footer">
+    <div id="instrucciones"><img width="100px" src="img/instrucciones.png" /></div>
+    <div id="prueba"><img width="100px" src="img/test.png" /></div>
+  </div>
+  <script type="text/javascript">
+    let puntaje = 0;
+    let pregunta1 = "";
+
+    document.getElementById('hotspot1').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Soporte';
+      document.getElementById('texto-info').textContent = 'Son estructuras metalicas que sostienen los platillos y tambores..';
+      document.getElementById('imagen-info').setAttribute('src', 'img/soporte.png');    
+    };
+
+    document.getElementById('hotspot2').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Tambores Principales';
+      document.getElementById('texto-info').textContent = 'Una bateria estandar esta formada por varias partes principales:Un bombo, que es el tambor grande que se toca con el pedal. Una caja (tambien llamada redoblante), que tiene un sonido agudo y seco. Dos tambores pequeños (toms) colocados sobre el bombo. Un tom de piso, que es un tambor mas grande a un lado del baterista. En total, una bateria basica suele tener cinco tambores principales.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/tambor.png');
+    };
+
+    document.getElementById('hotspot3').onclick = function() {
+      document.getElementById('titulo-info').textContent = ' Con que se toca la batería';
+      document.getElementById('texto-info').textContent = ' Las baquetas son los palos que se utilizan para golpear los tambores y platillos.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/baquetas.png');
+    };
+
+    document.getElementById('hotspot4').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Caja';
+      document.getElementById('titulo-info').textContent = 'Caja';
+      document.getElementById('texto-info').textContent = 'La caja produce un sonido característico y suele colocarse en el centro de la batería.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/caja.png');
+    };
+
+    document.getElementById('hotspot5').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Platillos';
+      document.getElementById('texto-info').textContent = 'Los platillos son piezas metálicas que producen un sonido agudo cuando se golpean.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/platillos.png');
+    };
+
+    document.getElementById('hotspot6').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Bomb';
+      document.getElementById('texto-info').textContent = 'El bombo es el tambor más grande de la batería y produce un sonido grave.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/caja.png');
+    };
+
+    document.getElementById('hotspot7').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Pedales';
+      document.getElementById('texto-info').textContent = ' Las baquetas permiten al baterista golpear los tambores y platillos para crear ritmos y sonidos. El componente que se toca con el pie izquierdo es el charles o hi-hat. Este conjunto de dos platillos se abre y se cierra con el pedal. Se utiliza para marcar el ritmo o crear efectos especiales en las canciones.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/pedal.png');
+    };
+
+    document.getElementById('hotspot8').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'CHARLES';
+      document.getElementById('texto-info').textContent = 'El charles es un platillo que se toca con un pedal, creando un sonido característico.'
+      document.getElementById('imagen-info').setAttribute('src', 'img/charles.png');
+    };
+
+    document.getElementById('hotspot9').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Persona que toca';
+      document.getElementById('texto-info').textContent = 'La persona que toca la batería se llama baterista. El baterista es el encargado de marcar el ritmo, mantener la base rítmica de la canción y trabajar en conjunto con los demás músicos para crear una interpretaciOn cohesiva.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/baterista.png');
+    };
+
+    document.getElementById('hotspot10').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Percucion';
+      document.getElementById('texto-info').textContent = 'El término percusión incluye varios instrumentos que se tocan golpeando.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/percucio.png');
+    };
+
+      document.getElementById('instrucciones').onclick = function(){
+      document.getElementById('titulo-info').textContent = 'Instrucciones';
+      document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/hotspot-cursor.png');
+    };
+    
+document.getElementById('prueba').onclick = function() {
+    alert("Bienvenidos a la prueba de conocimientos");
+    alert("Responde correctamente todas las preguntas para ganar");
+
+    let puntaje = 0;
+
+ 
+    let pregunta1 = prompt("¿Como se llama la parte más grande del pedal?");
+    pregunta1 = pregunta1.trim(); 
+    if (pregunta1.toLowerCase() === "bombo") {
+        alert("¡Correcto! es el Bombo.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: Bombo.");
+    }
+
+
+    let pregunta2 = prompt("¿Qué parte de la batería tiene un sonido metálico?");
+    pregunta2 = pregunta2.trim();
+    if (pregunta2.toLowerCase() === "platillo") {
+        alert("¡Correcto! El platillo es la respuesta.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: platillo.");
+    }
+
+
+    let pregunta3 = prompt("¿Cómo se llaman los palos con los que tocas la batería?");
+    pregunta3 = pregunta3.trim();
+    if (pregunta3.toLowerCase() === "baquetas") {
+        alert("¡Correcto! son las baquetas.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: baquetas.");
+    }
+
+
+    let pregunta4 = prompt("¿Qué parte produce un sonido agudo y seco?");
+    pregunta4 = pregunta4.trim();
+    if (pregunta4.toLowerCase() === "caja") {
+        alert("¡Correcto! es la caja.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: caja.");
+    }
+
+
+    let pregunta5 = prompt("¿Qué componente se toca con el pie izquierdo?");
+    pregunta5 = pregunta5.trim();
+    if (pregunta5.toLowerCase() === "charles") {
+        alert("¡Correcto! es el charles.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: charles.");
+    }
+
+
+    let pregunta6 = prompt("¿Qué tipo de instrumento es la batería?");
+    pregunta6 = pregunta6.trim();
+    if (pregunta6.toLowerCase() === "percusión") {
+        alert("¡Correcto! es de percusión");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: percusión.");
+    }
+
+
+    let pregunta7 = prompt("¿Cómo se llama la persona que toca la batería?");
+    pregunta7 = pregunta7.trim();
+    if (pregunta7.toLowerCase() === "baterista") {
+        alert("¡Correcto! se llama baterista.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: baterista.");
+    }
+
+   
+    let pregunta8 = prompt("¿Cómo se llama el soporte que sostiene los platillos?");
+    pregunta8 = pregunta8.trim();
+    if (pregunta8.toLowerCase() === "soporte") {
+        alert("¡Correcto! es el soporte.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: soporte.");
+    }
+
+   
+    let pregunta9 = prompt("¿Qué elemento da el pulso o ritmo base?");
+    pregunta9 = pregunta9.trim();
+    if (pregunta9.toLowerCase() === "bombo") {
+        alert("¡Correcto! es el bombo.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: bombo.");
+    }
+
+
+    let pregunta10 = prompt("¿Cuántos tambores principales tiene una batería estándar?");
+    pregunta10 = pregunta10.trim();
+    if (pregunta10.toLowerCase() === "5") {
+        alert("¡Correcto! son 5.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto. La respuesta correcta es: 5.");
+    }
+
+    if (puntaje >= 8) {
+    alert("¡Felicidades! Has respondido correctamente la mayoria de las preguntas.");
+    document.getElementById("calif").textContent = puntaje + "/10";
+    document.getElementById("imagen-resultado").setAttribute("src", 'img/winn.gif'); 
+    document.getElementById("imagen-resultado").style.display = "block"; 
+    document.getElementById("sad-gif").style.display = "none"; 
+    document.getElementById("resultado").setAttribute("class", "visible");
+} else {
+    alert("Has respondido " + puntaje + " preguntas correctamente. ¡Sigue intentando!");
+    document.getElementById("calif").textContent = puntaje + "/10";
+    document.getElementById("imagen-resultado").style.display = "none"; 
+    document.getElementById("sad-gif").setAttribute("src", 'img/sad.gif'); 
+    document.getElementById("sad-gif").style.display = "block"; 
+    document.getElementById("resultado").setAttribute("class", "visible");
+}
+}
+document.getElementById('boton-reiniciar').onclick = function(){
+  puntaje = 0;
+  document.getElementById("resultado").style.display = "none";
+  document.getElementById("imagen-resultado").style.display = "none";
+  document.getElementById("calif").textContent = "0/10";
+  alert("Puedes volver a realizar el test para tener una mejor calificacion.");
+};
+
+    <div id="resultado" class="invisible">
+    <h2>Tu resultado:</h2>
+    <span id="calif" class="texto-rojo">0/0</span>
+    <img id="imagen-resultado" width="200px" src="img/ping.gif" style="display: none;" />
+    <img id="sad-gif" width="200px" src="img/sad.gif" style="display: none;" />
+    <button id="boton-reiniciar">Reiniciar</button>
+
+    <div id="btnRegistro" style="margin-top: 20px;">
+        <a href="registro.html" class="btn" style="background-color:#27ae60; padding: 10px 20px; color: #fff; border-radius: 8px; text-decoration: none; font-size: 16px;">
+            Deja tu comentario
+        </a>
+    </div>
+</div>
+
+
+  </script>
+</body>
+</html>
+
